@@ -1,11 +1,21 @@
+def record_user_click(index,keyword,url):
+    urls=lookup(index,keyword)
+    if urls:
+        for entry in urls:
+            if entry[0]==url:
+                entry[1]=entry[1]+1
+
 def add_to_index(index, keyword, url):
     for entry in index:
         if entry[0] == keyword:
+            for elements in entry[1]:
+                if element[0]=url:
+                    return
             if not url in entry[1]:
-                entry[1].append(url)
+                entry[1].append([url:0])
             return
     # not found, add new keyword to index
-    index.append([keyword, [url]])
+    index.append([keyword, [url,0]])
 
 
 def get_page(url):
